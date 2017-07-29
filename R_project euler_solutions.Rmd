@@ -1,0 +1,31 @@
+---
+title: "R Project Euler Solutions"
+author: "Stephen Chu"
+date: "July 29, 2017"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+These are my solutions using R to the problems located at [Project Euler](https://projecteuler.net/).
+
+
+## Problem 0001 - Multiples of 3 and 5
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+
+```{r p0001}
+result <- 0
+for (i in 1:999){
+  if ((i %% 3 == 0) | (i %% 5 == 0)) {
+    result <- result + i
+  }
+}
+print(result)
+```
+
