@@ -11856,7 +11856,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(233168, 0.00012463549238480069)
+<pre>(233168, 0.0002966674936687529)
 </pre>
 </div>
 </div>
@@ -11878,7 +11878,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0002</span><span class="p">():</span>
@@ -11910,7 +11910,58 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(4613732, 2.0187438906305033e-05)
+<pre>(4613732, 1.872457553727877e-05)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-0003---Largest-Prime-Factor">Problem 0003 - Largest Prime Factor<a class="anchor-link" href="#Problem-0003---Largest-Prime-Factor">&#194;&#182;</a></h2><p>The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0003</span><span class="p">():</span>
+    <span class="n">prime</span> <span class="o">=</span> <span class="mi">600851475143</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">prime</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prime</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
+            <span class="n">prime</span> <span class="o">/=</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0003()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(6857, 0.0012012985493135113)
 </pre>
 </div>
 </div>
