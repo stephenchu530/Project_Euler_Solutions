@@ -11856,7 +11856,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(233168, 0.0002966674936687529)
+<pre>(233168, 0.00013253492500073875)
 </pre>
 </div>
 </div>
@@ -11910,7 +11910,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(4613732, 1.872457553727877e-05)
+<pre>(4613732, 1.6091436810243553e-05)
 </pre>
 </div>
 </div>
@@ -11961,7 +11961,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(6857, 0.0012012985493135113)
+<pre>(6857, 0.0013546064078441972)
 </pre>
 </div>
 </div>
@@ -11981,7 +11981,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -12025,7 +12025,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(906609, 0.31733034129957444)
+<pre>(906609, 0.2512396989204401)
 </pre>
 </div>
 </div>
@@ -12047,7 +12047,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0005</span><span class="p">():</span>
@@ -12078,7 +12078,61 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(232792560, 2.8379426488811532e-05)
+<pre>(232792560, 2.4868584161286122e-05)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-6---Sum-Square-Difference">Problem 6 - Sum Square Difference<a class="anchor-link" href="#Problem-6---Sum-Square-Difference">&#194;&#182;</a></h2><p>The sum of the squares of the first ten natural numbers is,
+$$1^2 + 2^2 + ... + 10^2 = 385$$</p>
+<p>The square of the sum of the first ten natural numbers is,
+$$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
+<p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is <code>3025 − 385 = 2640</code>.</p>
+<p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0006</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">s1</span> <span class="o">+=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">s2</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">s2</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">s1</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0006()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(25164150, 4.505602306870138e-05)
 </pre>
 </div>
 </div>
