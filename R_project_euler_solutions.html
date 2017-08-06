@@ -11,7 +11,6 @@
 
 <meta name="author" content="Stephen Chu" />
 
-<meta name="date" content="2017-07-29" />
 
 <title>R Project Euler Solutions</title>
 
@@ -217,7 +216,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">R Project Euler Solutions</h1>
 <h4 class="author"><em>Stephen Chu</em></h4>
-<h4 class="date"><em>July 29, 2017</em></h4>
+<h4 class="date"><em>Augest 6, 2017</em></h4>
 
 </div>
 
@@ -256,6 +255,24 @@ while (b &lt; max_num) {
 
 print(sum)</code></pre>
 <pre><code>## [1] 4613732</code></pre>
+</div>
+<div id="problem-0003---largest-prime-factor" class="section level2">
+<h2>Problem 0003 - Largest Prime Factor</h2>
+<p>The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?</p>
+<pre class="r"><code>prime &lt;- 600851475143
+a &lt;- 0
+x &lt;- 1
+
+while (x &lt;= prime) {
+  if (prime %% x == 0) {
+    a &lt;- x
+    prime &lt;- prime / x
+  }
+  x &lt;- x + 1
+}
+
+print(a)</code></pre>
+<pre><code>## [1] 6857</code></pre>
 </div>
 
 

@@ -1,7 +1,7 @@
 ---
 title: "R Project Euler Solutions"
 author: "Stephen Chu"
-date: "July 29, 2017"
+date: "Augest 6, 2017"
 output: 
   html_document:
     toc: true
@@ -50,4 +50,22 @@ while (b < max_num) {
 }
 
 print(sum)
+```
+
+## Problem 0003 - Largest Prime Factor
+The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?
+```{r p0003}
+prime <- 600851475143
+a <- 0
+x <- 1
+
+while (x <= prime) {
+  if (prime %% x == 0) {
+    a <- x
+    prime <- prime / x
+  }
+  x <- x + 1
+}
+
+print(a)
 ```
