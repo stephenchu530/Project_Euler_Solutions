@@ -11790,7 +11790,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -11857,7 +11857,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(233168, 0.00012522063554153685)
+<pre>(233168, 0.00011439531979782164)
 </pre>
 </div>
 </div>
@@ -11911,7 +11911,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(4613732, 1.726172312377372e-05)
+<pre>(4613732, 1.6091413270791916e-05)
 </pre>
 </div>
 </div>
@@ -11962,7 +11962,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(6857, 0.0013142315300296303)
+<pre>(6857, 0.0010711029815340806)
 </pre>
 </div>
 </div>
@@ -12026,7 +12026,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(906609, 0.2548152161796766)
+<pre>(906609, 0.25513667168718757)
 </pre>
 </div>
 </div>
@@ -12079,7 +12079,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(232792560, 2.7794299945149703e-05)
+<pre>(232792560, 4.0374818752131336e-05)
 </pre>
 </div>
 </div>
@@ -12133,7 +12133,7 @@ $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(25164150, 4.8566882009382084e-05)
+<pre>(25164150, 5.851423007557921e-05)
 </pre>
 </div>
 </div>
@@ -12191,7 +12191,7 @@ $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(104743, 28.949271599169915)
+<pre>(104743, 31.93465540384766)
 </pre>
 </div>
 </div>
@@ -12265,7 +12265,7 @@ $$9 × 9 × 8 × 9 = 5832$$
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(23514624000, 0.005350841596793998)
+<pre>(23514624000, 0.00428236392808401)
 </pre>
 </div>
 </div>
@@ -12291,7 +12291,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0009</span><span class="p">():</span>
@@ -12328,7 +12328,64 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(31875000, 0.47446245092476147)
+<pre>(31875000, 0.48557185371910805)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-10---Summation-of-Primes">Problem 10 - Summation of Primes<a class="anchor-link" href="#Problem-10---Summation-of-Primes">&#194;&#182;</a></h1><p>The sum of the primes below 10 is $2 + 3 + 5 + 7 = 17$.</p>
+<p>Find the sum of all the primes below two million.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0010</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2000000</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))):</span>
+        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+                <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0010()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(142913828922, 0.8924110554445761)
 </pre>
 </div>
 </div>
