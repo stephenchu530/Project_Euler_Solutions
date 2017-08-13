@@ -69,3 +69,36 @@ while (x <= prime) {
 
 print(a)
 ```
+## Problem 0004 - Largest Palindrome Product
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is `9009 = 91 × 99`. Find the largest palindrome made from the product of two 3-digit numbers.
+```{r}
+isPalindrome <- function(num){
+  if (num == '') {
+    return(TRUE)
+  } else if (substr(num, 1, 1) == substr(num, nchar(num), nchar(num))) {
+    return(isPalindrome(substr(num, 2, nchar(num) - 1)))
+  } else {
+    return(FALSE)
+  }
+}
+
+num <- 0
+a <- 999
+b <- 999
+while (a > 100) {
+  while (b > 100) {
+    if (isPalindrome(toString(a * b))) {
+      if ((a * b) >= num) {
+        num = a * b
+      } else {
+        break
+      }
+    }
+    b <- b - 1
+  }
+  a <- a - 1
+  b <- 999
+}
+print(num)
+```
+

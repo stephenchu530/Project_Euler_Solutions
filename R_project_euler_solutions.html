@@ -274,6 +274,39 @@ while (x &lt;= prime) {
 print(a)</code></pre>
 <pre><code>## [1] 6857</code></pre>
 </div>
+<div id="problem-0004---largest-palindrome-product" class="section level2">
+<h2>Problem 0004 - Largest Palindrome Product</h2>
+<p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is <code>9009 = 91 × 99</code>. Find the largest palindrome made from the product of two 3-digit numbers.</p>
+<pre class="r"><code>isPalindrome &lt;- function(num){
+  if (num == '') {
+    return(TRUE)
+  } else if (substr(num, 1, 1) == substr(num, nchar(num), nchar(num))) {
+    return(isPalindrome(substr(num, 2, nchar(num) - 1)))
+  } else {
+    return(FALSE)
+  }
+}
+
+num &lt;- 0
+a &lt;- 999
+b &lt;- 999
+while (a &gt; 100) {
+  while (b &gt; 100) {
+    if (isPalindrome(toString(a * b))) {
+      if ((a * b) &gt;= num) {
+        num = a * b
+      } else {
+        break
+      }
+    }
+    b &lt;- b - 1
+  }
+  a &lt;- a - 1
+  b &lt;- 999
+}
+print(num)</code></pre>
+<pre><code>## [1] 906609</code></pre>
+</div>
 
 
 
