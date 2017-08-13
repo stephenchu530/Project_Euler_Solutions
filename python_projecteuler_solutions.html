@@ -11857,7 +11857,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(233168, 0.00013312010710463473)
+<pre>(233168, 0.00016003665336733797)
 </pre>
 </div>
 </div>
@@ -11911,7 +11911,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(4613732, 1.989487314970305e-05)
+<pre>(4613732, 2.252801153434028e-05)
 </pre>
 </div>
 </div>
@@ -11962,7 +11962,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(6857, 0.0011661906525693953)
+<pre>(6857, 0.0011825743197637663)
 </pre>
 </div>
 </div>
@@ -12026,7 +12026,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(906609, 0.24259310946919893)
+<pre>(906609, 0.25065221519107705)
 </pre>
 </div>
 </div>
@@ -12079,7 +12079,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(232792560, 2.3990876445223464e-05)
+<pre>(232792560, 2.428344100458002e-05)
 </pre>
 </div>
 </div>
@@ -12133,7 +12133,7 @@ $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(25164150, 4.388574959490743e-05)
+<pre>(25164150, 4.3008022020119e-05)
 </pre>
 </div>
 </div>
@@ -12191,7 +12191,7 @@ $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(104743, 28.471690473222964)
+<pre>(104743, 29.521647517369242)
 </pre>
 </div>
 </div>
@@ -12265,7 +12265,7 @@ $$9 × 9 × 8 × 9 = 5832$$
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(23514624000, 0.004186993083020951)
+<pre>(23514624000, 0.004260719895771814)
 </pre>
 </div>
 </div>
@@ -12328,7 +12328,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(31875000, 0.4606482334815496)
+<pre>(31875000, 0.4554666560560712)
 </pre>
 </div>
 </div>
@@ -12385,7 +12385,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(142913828922, 0.787773196105519)
+<pre>(142913828922, 0.8483206537687487)
 </pre>
 </div>
 </div>
@@ -12493,7 +12493,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(70600674, 0.0004847912471923621)
+<pre>(70600674, 0.0005090745463576241)
 </pre>
 </div>
 </div>
@@ -12564,7 +12564,7 @@ Let us list the factors of the first seven triangle numbers:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(76576500, 13.738728822931535)
+<pre>(76576500, 13.948235603210914)
 </pre>
 </div>
 </div>
@@ -12722,7 +12722,76 @@ Let us list the factors of the first seven triangle numbers:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(5537376230, 3.0134881384924483e-05)
+<pre>(5537376230, 2.9842300996563154e-05)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-0014---Longest-Collatz-Sequence">Problem 0014 - Longest Collatz Sequence<a class="anchor-link" href="#Problem-0014---Longest-Collatz-Sequence">&#194;&#182;</a></h2><p>The following iterative sequence is defined for the set of positive integers:
+$$n → n/2 \text{ (n is even)}$$
+$$n → 3n + 1 \text{ (n is odd)}$$
+Using the rule above and starting with 13, we generate the following sequence:
+$$13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1$$
+It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.</p>
+<p>Which starting number, under one million, produces the longest chain?</p>
+<p><strong>NOTE:</strong> Once the chain starts the terms are allowed to go above one million.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_collatz_count</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">/=</span> <span class="mi">2</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>	
+    <span class="k">return</span> <span class="n">i</span>
+
+<span class="k">def</span> <span class="nf">problem0014</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1000000</span>
+    <span class="n">largest</span><span class="p">,</span> <span class="n">lcn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">cn</span> <span class="o">=</span> <span class="n">get_collatz_count</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cn</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">:</span>
+            <span class="n">largest</span><span class="p">,</span> <span class="n">lcn</span> <span class="o">=</span> <span class="n">cn</span><span class="p">,</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">lcn</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0014()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(837799, 22.27668874509321)
 </pre>
 </div>
 </div>
