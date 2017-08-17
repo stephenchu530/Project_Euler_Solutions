@@ -12970,6 +12970,123 @@ How many such routes are there through a 20x20 grid?</p>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-0018---Maximum-Path-Sum-I">Problem 0018 - Maximum Path Sum I<a class="anchor-link" href="#Problem-0018---Maximum-Path-Sum-I">&#194;&#182;</a></h2><p>By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align:center;font-family:'courier new';font-size:12pt;"><span style="color:#ff0000;"><b>3</b></span><br><span style="color:#ff0000;"><b>7</b></span> 4<br>
+2 <span style="color:#ff0000;"><b>4</b></span> 6<br>
+8 5 <span style="color:#ff0000;"><b>9</b></span> 3</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That is, 3 + 7 + 4 + 9 = 23.</p>
+<p>Find the maximum total from top to bottom of the triangle below:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align:center;font-family:'courier new';">75<br>
+95 64<br>
+17 47 82<br>
+18 35 87 10<br>
+20 04 82 47 65<br>
+19 01 23 75 03 34<br>
+88 02 77 73 07 63 67<br>
+99 65 04 28 06 16 70 92<br>
+41 41 26 56 83 40 80 70 33<br>
+41 48 72 33 47 32 37 16 94 29<br>
+53 71 44 65 25 43 91 52 97 51 14<br>
+70 11 33 28 77 73 17 78 39 68 17 57<br>
+91 71 52 38 17 14 91 43 58 50 27 29 48<br>
+63 66 04 68 89 53 67 30 73 16 69 87 40 31<br>
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>NOTE:</strong> As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Solution code found here: https://rosettacode.org/wiki/Maximum_triangle_path_sum#Python</span>
+<span class="c1"># Definitely not my own code</span>
+
+<span class="n">triangle</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">75</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">82</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">67</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">33</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">29</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">53</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">57</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">91</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">48</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">23</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">problem0018</span><span class="p">():</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">t0</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">triangle</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">max</span><span class="p">(</span><span class="n">t0</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t0</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">t</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t1</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">triangle</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0018()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1074, 6.407321315461101e-05)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
