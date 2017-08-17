@@ -12891,6 +12891,85 @@ How many such routes are there through a 20x20 grid?</p>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-0017---Number-Letter-Counts">Problem 0017 - Number Letter Counts<a class="anchor-link" href="#Problem-0017---Number-Letter-Counts">&#194;&#182;</a></h2><p>If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are $3 + 3 + 5 + 4 + 4 = 19$ letters used in total.</p>
+<p>If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?</p>
+<p><strong>NOTE:</strong> Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_words</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Three&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;Four&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;Five&#39;</span><span class="p">,</span>
+             <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;Six&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;Seven&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;Eight&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;Nine&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;Ten&#39;</span><span class="p">,</span>
+             <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;Eleven&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;Twelve&#39;</span><span class="p">,</span> <span class="mi">13</span><span class="p">:</span> <span class="s1">&#39;Thirteen&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span> <span class="s1">&#39;Fourteen&#39;</span><span class="p">,</span>
+             <span class="mi">15</span><span class="p">:</span> <span class="s1">&#39;Fifteen&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span> <span class="s1">&#39;Sixteen&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span> <span class="s1">&#39;Seventeen&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">:</span> <span class="s1">&#39;Eighteen&#39;</span><span class="p">,</span>
+             <span class="mi">19</span><span class="p">:</span> <span class="s1">&#39;Nineteen&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span> <span class="s1">&#39;Twenty&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">:</span> <span class="s1">&#39;Thirty&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">:</span> <span class="s1">&#39;Forty&#39;</span><span class="p">,</span>
+             <span class="mi">50</span><span class="p">:</span> <span class="s1">&#39;Fifty&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">:</span> <span class="s1">&#39;Sixty&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">:</span> <span class="s1">&#39;Seventy&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">:</span> <span class="s1">&#39;Eighty&#39;</span><span class="p">,</span>
+             <span class="mi">90</span><span class="p">:</span> <span class="s1">&#39;Ninety&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Zero&#39;</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">problem0017</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">position</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">position</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">thousands</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">%=</span> <span class="mi">1000</span>
+        <span class="n">hundreds</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">%=</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">tens</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tens</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="n">count</span> <span class="o">%=</span> <span class="mi">10</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_words</span><span class="p">[</span><span class="n">count</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">tens</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_words</span><span class="p">[</span><span class="n">tens</span> <span class="o">*</span> <span class="mi">10</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">hundreds</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tens</span> <span class="o">+</span> <span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num_words</span><span class="p">[</span><span class="n">hundreds</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num_words</span><span class="p">[</span><span class="n">hundreds</span><span class="p">])</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">thousands</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num_words</span><span class="p">[</span><span class="n">thousands</span><span class="p">])</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span>
+        <span class="n">position</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">position</span>
+    <span class="k">return</span> <span class="nb">sum</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0017()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(21124, 0.0011527330305369787)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
