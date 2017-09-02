@@ -11798,6 +11798,7 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">calendar</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">functools</span>
 
 <span class="k">def</span> <span class="nf">time_execution</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -11860,7 +11861,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(233168, 0.00011381051047378525)
+<pre>(233168, 0.00010971434188802875)
 </pre>
 </div>
 </div>
@@ -11914,7 +11915,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(4613732, 1.69691763688435e-05)
+<pre>(4613732, 2.545372731802345e-05)
 </pre>
 </div>
 </div>
@@ -11965,7 +11966,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(6857, 0.0010772501274151115)
+<pre>(6857, 0.00115448744824043)
 </pre>
 </div>
 </div>
@@ -12029,7 +12030,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(906609, 0.25277577691033426)
+<pre>(906609, 0.27816681670712445)
 </pre>
 </div>
 </div>
@@ -12082,7 +12083,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(232792560, 2.5746336559662186e-05)
+<pre>(232792560, 4.534859464705443e-05)
 </pre>
 </div>
 </div>
@@ -12136,7 +12137,7 @@ $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(25164150, 4.417837296022409e-05)
+<pre>(25164150, 4.739659569563681e-05)
 </pre>
 </div>
 </div>
@@ -12194,7 +12195,7 @@ $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(104743, 29.995498779682162)
+<pre>(104743, 33.14905556431645)
 </pre>
 </div>
 </div>
@@ -12268,7 +12269,7 @@ $$9 \times 9 \times 8 \times 9 = 5832$$
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(23514624000, 0.00381806468298862)
+<pre>(23514624000, 0.004121748396052283)
 </pre>
 </div>
 </div>
@@ -12331,7 +12332,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(31875000, 0.4968718201080051)
+<pre>(31875000, 0.5359598264114354)
 </pre>
 </div>
 </div>
@@ -12388,7 +12389,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(142913828922, 0.8632881231564298)
+<pre>(142913828922, 0.9919185878623225)
 </pre>
 </div>
 </div>
@@ -12497,7 +12498,7 @@ There exists exactly one Pythagorean triplet for which $a + b + c = 1000$. Find 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(70600674, 0.0005503279439622588)
+<pre>(70600674, 0.0005397945620941869)
 </pre>
 </div>
 </div>
@@ -12568,7 +12569,7 @@ Let us list the factors of the first seven triangle numbers:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(76576500, 14.653822658063493)
+<pre>(76576500, 15.770850918104237)
 </pre>
 </div>
 </div>
@@ -12726,7 +12727,7 @@ Let us list the factors of the first seven triangle numbers:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(5537376230, 2.779434060329322e-05)
+<pre>(5537376230, 2.7501728368406475e-05)
 </pre>
 </div>
 </div>
@@ -12795,7 +12796,7 @@ It can be seen that this sequence (starting at 13 and finishing at 1) contains 1
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(837799, 23.445987404189985)
+<pre>(837799, 26.05305346716338)
 </pre>
 </div>
 </div>
@@ -12841,7 +12842,7 @@ How many such routes are there through a 20x20 grid?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(137846528820, 1.9017180406422085e-05)
+<pre>(137846528820, 2.8086871523669288e-05)
 </pre>
 </div>
 </div>
@@ -12886,7 +12887,7 @@ How many such routes are there through a 20x20 grid?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(1366, 9.654876210163366e-05)
+<pre>(1366, 8.630861562153314e-05)
 </pre>
 </div>
 </div>
@@ -12965,7 +12966,7 @@ How many such routes are there through a 20x20 grid?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(21124, 0.0011343016686566898)
+<pre>(21124, 0.0011126497125388823)
 </pre>
 </div>
 </div>
@@ -13082,7 +13083,7 @@ How many such routes are there through a 20x20 grid?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(1074, 5.8221829263516156e-05)
+<pre>(1074, 6.202517461417756e-05)
 </pre>
 </div>
 </div>
@@ -13146,7 +13147,7 @@ twentieth century (1 Jan 1901 to 31 Dec 2000)?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(171, 0.018582418411909885)
+<pre>(171, 0.01936560534376497)
 </pre>
 </div>
 </div>
@@ -13192,7 +13193,7 @@ twentieth century (1 Jan 1901 to 31 Dec 2000)?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(648, 5.880697327143025e-05)
+<pre>(648, 5.675888620260139e-05)
 </pre>
 </div>
 </div>
@@ -13266,7 +13267,78 @@ twentieth century (1 Jan 1901 to 31 Dec 2000)?</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(31626, 17.651688930421116)
+<pre>(31626, 19.013587316670993)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-0023---Non-Abundant-Sums">Problem 0023 - Non-Abundant Sums<a class="anchor-link" href="#Problem-0023---Non-Abundant-Sums">&#194;&#182;</a></h2><p>A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.</p>
+<p>A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.</p>
+<p>As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.</p>
+<p>Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="fm">__add__</span><span class="p">,</span> <span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">//</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span>
+
+<span class="k">def</span> <span class="nf">problem0023</span><span class="p">():</span>
+    <span class="n">LARGEST</span> <span class="o">=</span> <span class="mi">28123</span>
+    
+    <span class="n">list_of_nums</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="n">LARGEST</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">factors</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">list_of_nums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_of_nums</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">list_of_nums</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">LARGEST</span><span class="p">:</span>
+                <span class="n">temp_list</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">LARGEST</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">temp_list</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0023()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(4179871, 6.934801594046988)
 </pre>
 </div>
 </div>
