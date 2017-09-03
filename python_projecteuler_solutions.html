@@ -13347,6 +13347,62 @@ twentieth century (1 Jan 1901 to 31 Dec 2000)?</p>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-0025---1000-digit-Fibonacci-number">Problem 0025 - 1000-digit Fibonacci number<a class="anchor-link" href="#Problem-0025---1000-digit-Fibonacci-number">&#194;&#182;</a></h2><p>The Fibonacci sequence is defined by the recurrence relation:</p>
+$$F_n = F_{n−1} + F_{n−2} \text{ where }F_1 = 1 \text{ and } F_2 = 1$$<p>Hence the first 12 terms will be:</p>
+$$F_1 = 1$$$$F_2 = 1$$$$F_3 = 2$$$$F_4 = 3$$$$F_5 = 5$$$$F_6 = 8$$$$F_7 = 13$$$$F_8 = 21$$$$F_9 = 34$$$$F_{10} = 55$$$$F_{11} = 89$$$$F_{12} = 144$$<p>The 12th term, $F_{12}$, is the first term to contain three digits.</p>
+<p>What is the index of the first term in the Fibonacci sequence to contain 1000 digits?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">problem0025</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">f_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">digits</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">fib</span> <span class="o">=</span> <span class="n">f_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">f_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">f_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">digits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fib</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">index</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">time_execution</span><span class="p">(</span><span class="s2">&quot;problem0025()&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(4782, 0.02975477856489306)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
